@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng sinh nhật a zai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="icon" href="img/icon.png" type="image/png">
+
+</head>
+<body class="preload">
+    <!-- Enhanced animated background -->
+    <div class="bubbles" id="bubbles"></div>
+    <div class="bg-hearts" id="bgHearts"></div>
+
+    <div class="container">
+        <!-- Calculator screen -->
+        <div class="calculator-screen" id="calculatorScreen">
+            <div class="input-avatar-row">
+                <div class="avatar-square">
+                    <img id="avatarImg" src="img/nhat1.jpg" alt="Avatar" style="display:block;">
+                </div>
+                <div class="input-and-keypad">
+                    <div class="calculator-title">Nhập ngày sinh của Nhật</div>
+                    <input type="password" class="display" id="display" placeholder="••••••••" maxlength="8">
+                    <div class="buttons">
+                        <button class="btn btn-number" onclick="appendToDisplay('1')">1</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('2')">2</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('3')">3</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('4')">4</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('5')">5</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('6')">6</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('7')">7</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('8')">8</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('9')">9</button>
+                        <button class="btn btn-clear" onclick="clearDisplay()">C</button>
+                        <button class="btn btn-number" onclick="appendToDisplay('0')">0</button>
+                        <button class="btn btn-enter" onclick="checkPassword()">✓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <audio id="myAudio">
+            <source src="thienly.mp3" type="audio/mp3">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
+        </audio>
+    </div>
+
+    <!-- Birthday screen nằm ngoài container -->
+    <div class="birthday-screen" id="birthdayScreen" style="display:none;">
+        <!-- Trang lời chúc đẹp -->
+        <div class="wishes-page" id="wishesPage">
+            <div class="main-title">
+                <h1 class="rainbow-text">💗CHÚC MỪNG SINH NHẬT💗</h1>
+                <div class="subtitle">Nhật Kid</div>
+            </div>
+            
+            <!-- Thiệp 3D -->
+            <div class="birthday-card-section">
+                <div class="card-3d">
+                    <div class="card-imgBox">
+                        <div class="card-bark"></div>
+                        <img src="img/nhat2.jpg" alt="Birthday">
+                    </div>
+                    <div class="card-details">
+                        <h4>HAPPY BIRTHDAY</h4>
+                        <p>🌟 Chúc anh năm nay luôn tràn đầy năng lượng, sức khỏe dồi dào, tinh thần luôn vui vẻ và hạnh phúc mỗi ngày. Chúc công việc kinh doanh trên TikTok Shop thuận lợi, áo quần bán chạy, khách hàng yêu thương nồng nhiệt, và mỗi bộ sưu tập mới đều nhận được nhiều lời khen. Mong anh luôn giữ được phong cách riêng, tự tin với những quyết định của mình, và luôn có những phút giây thư giãn bên gia đình và bạn bè. Chúc mọi dự định đều thành công, mọi nỗ lực đều được đền đáp xứng đáng, và mỗi ngày đều là một ngày tuyệt vời! 💖🛍️✨</p>
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <button class="continue-btn" onclick="showLetter()">
+                Mở quà nè
+            </button>
+            <audio id="myAudio">
+            <source src="vetmua.mp3" type="audio/mp3">
+            Trình duyệt của bạn không hỗ trợ thẻ audio.
+        </audio>
+        </div>
+        
+    <!-- Gallery trái tim nằm ngoài container để nổi bật -->
+    <div id="heartGallery" class="heart-gallery" style="display:none;"></div>
+    
+    <script src="lang.js"></script>
+    <script>
+    // Phát nhạc khi chạm vào màn hình lần đầu
+    let audioPlayed = false;
+    function playAudioOnFirstTouch() {
+        if (!audioPlayed) {
+            audioPlayed = true;
+            if (typeof playAudio === 'function') {
+                playAudio();
+            } else {
+                var audio = document.getElementById('myAudio');
+                if (audio) audio.play();
+            }
+        }
+    }
+    document.addEventListener('click', playAudioOnFirstTouch);
+    document.addEventListener('touchstart', playAudioOnFirstTouch);
+    </script>
+</body>
+</html>
